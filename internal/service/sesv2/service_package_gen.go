@@ -26,6 +26,16 @@ func (p *servicePackage) FrameworkDataSources(ctx context.Context) []*inttypes.S
 func (p *servicePackage) FrameworkResources(ctx context.Context) []*inttypes.ServicePackageFrameworkResource {
 	return []*inttypes.ServicePackageFrameworkResource{
 		{
+			Factory:  newAccountDedicatedIPWarmupAttributesResource,
+			TypeName: "aws_sesv2_account_dedicated_ip_warmup_attributes",
+			Name:     "Account Dedicated IP Warmup Attributes",
+			Region:   inttypes.ResourceRegionDefault(),
+			Identity: inttypes.RegionalSingletonIdentity(inttypes.WithIdentityDuplicateAttrs(names.AttrID)),
+			Import: inttypes.FrameworkImport{
+				WrappedImport: true,
+			},
+		},
+		{
 			Factory:  newAccountSuppressionAttributesResource,
 			TypeName: "aws_sesv2_account_suppression_attributes",
 			Name:     "Account Suppression Attributes",

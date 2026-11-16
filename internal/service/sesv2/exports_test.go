@@ -19,6 +19,7 @@ var (
 	ResourceTenant                           = newTenantResource
 	ResourceTenantResource                   = newTenantResourceAssociationResource
 
+	FindAccountDedicatedIPAutoWarmupEnabled          = findAccountDedicatedIPAutoWarmupEnabled
 	FindAccountSuppressionAttributes                 = findAccountSuppressionAttributes
 	FindAccountVDMAttributes                         = findAccountVDMAttributes
 	FindConfigurationSetByID                         = findConfigurationSetByID
